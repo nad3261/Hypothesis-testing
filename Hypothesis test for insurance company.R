@@ -44,7 +44,7 @@ for (col in selected_columns) {
 }
 par(mfrow = c(1, 1))
 
-# hecking for outliers in age and their removal
+# checking for outliers in age and their removal
 Q1 <- quantile(train$Age, 0.25, na.rm = TRUE)
 Q3 <- quantile(train$Age, 0.75, na.rm = TRUE)
 IQR_value <- IQR(train$Age, na.rm = TRUE)
