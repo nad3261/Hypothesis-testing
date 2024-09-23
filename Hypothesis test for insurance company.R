@@ -135,3 +135,12 @@ chi_square_result <- chisq.test(contingency_table)
 print(chi_square_result)
 #P value is less then significance level(0.05)
 #H0 is rejected, meaning there is a relationship between the mber of siblings/spouses aboard and the survival status.
+
+train$Pclass <- factor(train$Pclass)
+train$SibSp <- factor(train$SibSp)
+
+
+logistic_model_full <- glm(Survived ~ Age + Pclass + Sex + SibSp, 
+                           data = train, family = binomial)
+
+summary(logistic_model_full)
